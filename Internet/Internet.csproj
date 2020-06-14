@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E4D0713C-9E72-4968-82F9-DFDA2861296C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Internet</RootNamespace>
+    <AssemblyName>Internet</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CAMADAS\BLL\Clientes.cs" />
+    <Compile Include="CAMADAS\BLL\Rede.cs" />
+    <Compile Include="CAMADAS\BLL\Roteador.cs" />
+    <Compile Include="CAMADAS\DAL\Clientes.cs" />
+    <Compile Include="CAMADAS\DAL\Conexao.cs" />
+    <Compile Include="CAMADAS\DAL\Rede.cs" />
+    <Compile Include="CAMADAS\DAL\Roteador.cs" />
+    <Compile Include="CAMADAS\MODEL\Clientes.cs" />
+    <Compile Include="CAMADAS\MODEL\Rede.cs" />
+    <Compile Include="CAMADAS\MODEL\Roteador.cs" />
+    <Compile Include="FORMS\frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmRede.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmRede.Designer.cs">
+      <DependentUpon>frmRede.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmRoteador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmRoteador.Designer.cs">
+      <DependentUpon>frmRoteador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmSobre.Designer.cs">
+      <DependentUpon>frmSobre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FORMS\frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmRede.resx">
+      <DependentUpon>frmRede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmRoteador.resx">
+      <DependentUpon>frmRoteador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmSobre.resx">
+      <DependentUpon>frmSobre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\digital %282%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
