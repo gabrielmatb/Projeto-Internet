@@ -37,7 +37,74 @@ namespace Internet.CAMADAS.DAL
             }
             catch
             {
-                Console.WriteLine("Erro na execução do comando Select de Clientes");
+                Console.WriteLine("Erro na execução do comando Select de Clientes...");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return listaClientes;
+        }
+
+        public MODEL.Clientes SelectByID(int id)
+        {
+            MODEL.Clientes cliente = new MODEL.Clientes();
+            SqlConnection conexao = new SqlConnection(stringConexao);
+            string sql = "SELECT * FROM Clientes WHERE id=@id";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                if (dados.Read())
+                {
+                    cliente.id = Convert.ToInt32(dados[0].ToString());
+                    cliente.nome = dados["nome"].ToString();
+                    cliente.cpf = dados["cpf"].ToString();
+                    cliente.telefone = dados["telefone"].ToString();
+                    cliente.idade = Convert.ToInt32(dados["idade"].ToString());
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Erro na execução do comando Select de Clientes por ID...");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return cliente;
+        }
+
+        public List<MODEL.Clientes> SelectbyNome(string nome)
+        {
+            List<MODEL.Clientes> listaClientes = new List<MODEL.Clientes>();
+            SqlConnection conexao = new SqlConnection(stringConexao);
+            string sql = "SELECT * FROM Clientes WHERE (nome LIKE @nome);";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.Clientes cliente = new MODEL.Clientes();
+                    cliente.id = Convert.ToInt32(dados[0].ToString());
+                    cliente.nome = dados["nome"].ToString();
+                    cliente.cpf = dados["cpf"].ToString();
+                    cliente.telefone = dados["telefone"].ToString();
+                    cliente.idade = Convert.ToInt32(dados["idade"].ToString());
+
+                    listaClientes.Add(cliente);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Erro na execução do comando Select de Clientes por Nome...");
             }
             finally
             {

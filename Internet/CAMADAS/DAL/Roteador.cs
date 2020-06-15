@@ -48,6 +48,77 @@ namespace Internet.CAMADAS.DAL
             return listaRoteador;
         }
 
+        public MODEL.Roteador SelectByID(int id)
+        {
+            MODEL.Roteador roteador = new MODEL.Roteador();
+            SqlConnection conexao = new SqlConnection(stringConexao);
+            string sql = "SELECT * FROM Roteador WHERE id=@id;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                if (dados.Read())
+                {
+                    roteador.id = Convert.ToInt32(dados["id"].ToString());
+                    roteador.nome = dados["nome"].ToString();
+                    roteador.marca = dados["marca"].ToString();
+                    roteador.usuario = dados["usuario"].ToString();
+                    roteador.senha = dados["senha"].ToString();
+                    roteador.mac = dados["mac"].ToString();
+                    roteador.situacao = Convert.ToInt32(dados["situacao"].ToString());
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Erro ao Listar Roteador por ID...");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return roteador;
+        }
+
+        public List<MODEL.Roteador> SelectbyNome(string nome)
+        {
+            List<MODEL.Roteador> listaRoteador = new List<MODEL.Roteador>();
+            SqlConnection conexao = new SqlConnection(stringConexao);
+            string sql = "SELECT * FROM Roteador WHERE (nome LIKE @nome);";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.Roteador roteador = new MODEL.Roteador();
+                    roteador.id = Convert.ToInt32(dados["id"].ToString());
+                    roteador.nome = dados["nome"].ToString();
+                    roteador.marca = dados["marca"].ToString();
+                    roteador.usuario = dados["usuario"].ToString();
+                    roteador.senha = dados["senha"].ToString();
+                    roteador.mac = dados["mac"].ToString();
+                    roteador.situacao = Convert.ToInt32(dados["situacao"].ToString());
+
+                    listaRoteador.Add(roteador);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Erro ao Listar Roteador por Nome...");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return listaRoteador;
+        }
+
         public void Insert(MODEL.Roteador roteador)
         {
             SqlConnection conexao = new SqlConnection(stringConexao);

@@ -50,6 +50,7 @@
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgRede)).BeginInit();
             this.SuspendLayout();
             // 
@@ -219,7 +220,7 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(814, 481);
+            this.btnVoltar.Location = new System.Drawing.Point(813, 481);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(178, 44);
             this.btnVoltar.TabIndex = 37;
@@ -230,7 +231,7 @@
             // btnRemover
             // 
             this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemover.Location = new System.Drawing.Point(555, 481);
+            this.btnRemover.Location = new System.Drawing.Point(425, 481);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(178, 44);
             this.btnRemover.TabIndex = 36;
@@ -241,7 +242,7 @@
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(296, 481);
+            this.btnEditar.Location = new System.Drawing.Point(231, 481);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(178, 44);
             this.btnEditar.TabIndex = 35;
@@ -260,6 +261,17 @@
             this.btnInserir.UseVisualStyleBackColor = true;
             this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(619, 480);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(178, 44);
+            this.btnCancelar.TabIndex = 50;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmRede
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,6 +279,7 @@
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(1014, 536);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dtgRede);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.txtMascara);
@@ -319,5 +332,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mascara;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn situacao;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

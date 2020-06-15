@@ -53,6 +53,7 @@
             this.btnInserir = new System.Windows.Forms.Button();
             this.txtMac = new System.Windows.Forms.TextBox();
             this.lblMac = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgRoteador)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             this.marca,
             this.usuario,
             this.mac});
-            this.dtgRoteador.Location = new System.Drawing.Point(452, 87);
+            this.dtgRoteador.Location = new System.Drawing.Point(468, 87);
             this.dtgRoteador.Name = "dtgRoteador";
             this.dtgRoteador.Size = new System.Drawing.Size(526, 354);
             this.dtgRoteador.TabIndex = 31;
@@ -122,7 +123,7 @@
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(85, 335);
+            this.txtSenha.Location = new System.Drawing.Point(91, 335);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(199, 29);
             this.txtSenha.TabIndex = 30;
@@ -130,7 +131,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(85, 283);
+            this.txtUsuario.Location = new System.Drawing.Point(91, 283);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(199, 29);
             this.txtUsuario.TabIndex = 29;
@@ -138,7 +139,7 @@
             // txtMarca
             // 
             this.txtMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarca.Location = new System.Drawing.Point(85, 231);
+            this.txtMarca.Location = new System.Drawing.Point(91, 231);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(199, 29);
             this.txtMarca.TabIndex = 28;
@@ -146,7 +147,7 @@
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(85, 179);
+            this.txtNome.Location = new System.Drawing.Point(91, 179);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(347, 29);
             this.txtNome.TabIndex = 27;
@@ -154,7 +155,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(85, 127);
+            this.txtID.Location = new System.Drawing.Point(91, 127);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(62, 29);
             this.txtID.TabIndex = 26;
@@ -175,7 +176,7 @@
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.White;
-            this.lblSenha.Location = new System.Drawing.Point(7, 338);
+            this.lblSenha.Location = new System.Drawing.Point(13, 338);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(70, 24);
             this.lblSenha.TabIndex = 24;
@@ -186,7 +187,7 @@
             this.lblUsuário.AutoSize = true;
             this.lblUsuário.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuário.ForeColor = System.Drawing.Color.White;
-            this.lblUsuário.Location = new System.Drawing.Point(-2, 286);
+            this.lblUsuário.Location = new System.Drawing.Point(4, 286);
             this.lblUsuário.Name = "lblUsuário";
             this.lblUsuário.Size = new System.Drawing.Size(79, 24);
             this.lblUsuário.TabIndex = 23;
@@ -197,7 +198,7 @@
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarca.ForeColor = System.Drawing.Color.White;
-            this.lblMarca.Location = new System.Drawing.Point(10, 234);
+            this.lblMarca.Location = new System.Drawing.Point(16, 234);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(67, 24);
             this.lblMarca.TabIndex = 22;
@@ -208,7 +209,7 @@
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.White;
-            this.lblNome.Location = new System.Drawing.Point(10, 182);
+            this.lblNome.Location = new System.Drawing.Point(16, 182);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(67, 24);
             this.lblNome.TabIndex = 21;
@@ -219,7 +220,7 @@
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.ForeColor = System.Drawing.Color.White;
-            this.lblID.Location = new System.Drawing.Point(45, 130);
+            this.lblID.Location = new System.Drawing.Point(51, 130);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(32, 24);
             this.lblID.TabIndex = 20;
@@ -228,7 +229,7 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(795, 481);
+            this.btnVoltar.Location = new System.Drawing.Point(794, 481);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(178, 44);
             this.btnVoltar.TabIndex = 19;
@@ -239,7 +240,7 @@
             // btnRemover
             // 
             this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemover.Location = new System.Drawing.Point(536, 481);
+            this.btnRemover.Location = new System.Drawing.Point(406, 481);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(178, 44);
             this.btnRemover.TabIndex = 18;
@@ -250,7 +251,7 @@
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(277, 481);
+            this.btnEditar.Location = new System.Drawing.Point(212, 481);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(178, 44);
             this.btnEditar.TabIndex = 17;
@@ -272,7 +273,7 @@
             // txtMac
             // 
             this.txtMac.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMac.Location = new System.Drawing.Point(85, 387);
+            this.txtMac.Location = new System.Drawing.Point(91, 387);
             this.txtMac.Name = "txtMac";
             this.txtMac.Size = new System.Drawing.Size(347, 29);
             this.txtMac.TabIndex = 33;
@@ -282,19 +283,31 @@
             this.lblMac.AutoSize = true;
             this.lblMac.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMac.ForeColor = System.Drawing.Color.White;
-            this.lblMac.Location = new System.Drawing.Point(26, 390);
+            this.lblMac.Location = new System.Drawing.Point(32, 390);
             this.lblMac.Name = "lblMac";
             this.lblMac.Size = new System.Drawing.Size(51, 24);
             this.lblMac.TabIndex = 32;
             this.lblMac.Text = "Mac:";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(600, 481);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(178, 44);
+            this.btnCancelar.TabIndex = 34;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmRoteador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(990, 536);
+            this.ClientSize = new System.Drawing.Size(1016, 535);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtMac);
             this.Controls.Add(this.lblMac);
             this.Controls.Add(this.dtgRoteador);
@@ -353,5 +366,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn mac;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

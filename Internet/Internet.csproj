@@ -46,16 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAMADAS\BLL\ClienteRoteador.cs" />
     <Compile Include="CAMADAS\BLL\Clientes.cs" />
     <Compile Include="CAMADAS\BLL\Rede.cs" />
     <Compile Include="CAMADAS\BLL\Roteador.cs" />
+    <Compile Include="CAMADAS\DAL\ClienteRoteador.cs" />
     <Compile Include="CAMADAS\DAL\Clientes.cs" />
     <Compile Include="CAMADAS\DAL\Conexao.cs" />
     <Compile Include="CAMADAS\DAL\Rede.cs" />
     <Compile Include="CAMADAS\DAL\Roteador.cs" />
+    <Compile Include="CAMADAS\MODEL\ClienteRoteador.cs" />
     <Compile Include="CAMADAS\MODEL\Clientes.cs" />
     <Compile Include="CAMADAS\MODEL\Rede.cs" />
     <Compile Include="CAMADAS\MODEL\Roteador.cs" />
+    <Compile Include="FORMS\frmClienteRoteador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmClienteRoteador.Designer.cs">
+      <DependentUpon>frmClienteRoteador.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +97,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FORMS\frmClienteRoteador.resx">
+      <DependentUpon>frmClienteRoteador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +140,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\digital %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cabeçalhoLink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cabeçalhoLink1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

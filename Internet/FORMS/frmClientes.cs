@@ -22,50 +22,130 @@ namespace Internet.FORMS
             CAMADAS.BLL.Clientes bllClientes = new CAMADAS.BLL.Clientes();
             //dtgClientes.DataSource = "";
             dtgClientes.DataSource = bllClientes.Select();
+            txtID.Enabled = false;
+            habilitaControles(true);
+        }
+
+        private void habilitaControles(bool status)
+        {
+            btnInserir.Enabled = status;
+            btnEditar.Enabled = !status;
+            btnRemover.Enabled = !status;
+        }
+
+        private void limpaControles()
+        {
+            txtID.Text = "";
+            txtNome.Text = "";
+            txtCPF.Text = "";
+            txtTelefone.Text = "";
+            txtIdade.Text = "";
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            CAMADAS.MODEL.Clientes cliente = new CAMADAS.MODEL.Clientes();
+            txtID.Text = "-1";
+            string mensagem = "Deseja Inserir novo Cliente?";
+            string tituloMensagem = "Inserir";
 
-            cliente.nome = txtNome.Text;
-            cliente.cpf = txtCPF.Text;
-            cliente.telefone = txtTelefone.Text;
-            cliente.idade = Convert.ToInt32(txtIdade.Text);
+            DialogResult resposta = MessageBox.Show(mensagem, tituloMensagem, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-            CAMADAS.BLL.Clientes bllClientes = new CAMADAS.BLL.Clientes();
-            bllClientes.Insert(cliente);
+            if (resposta == DialogResult.Yes)
+            {
+                CAMADAS.MODEL.Clientes cliente = new CAMADAS.MODEL.Clientes();
 
-            //dtgClientes.DataSource = "";
-            dtgClientes.DataSource = bllClientes.Select();
+                cliente.nome = txtNome.Text;
+                cliente.cpf = txtCPF.Text;
+                cliente.telefone = txtTelefone.Text;
+                cliente.idade = Convert.ToInt32(txtIdade.Text);
+
+                CAMADAS.BLL.Clientes bllClientes = new CAMADAS.BLL.Clientes();
+                bllClientes.Insert(cliente);
+
+                //dtgClientes.DataSource = "";
+                dtgClientes.DataSource = bllClientes.Select();
+                limpaControles();
+            }
+            else
+                limpaControles();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            CAMADAS.MODEL.Clientes cliente = new CAMADAS.MODEL.Clientes();
+            if(txtID.Text != "")
+            {
+                string mensagem = "Deseja Editar o Cliente?";
+                string tituloMensagem = "Editar";
 
-            cliente.id = Convert.ToInt32(txtID.Text);
-            cliente.nome = txtNome.Text;
-            cliente.cpf = txtCPF.Text;
-            cliente.telefone = txtTelefone.Text;
-            cliente.idade = Convert.ToInt32(txtIdade.Text);
+                DialogResult resposta = MessageBox.Show(mensagem, tituloMensagem, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-            CAMADAS.BLL.Clientes bllClientes = new CAMADAS.BLL.Clientes();
-            bllClientes.Update(cliente);
+                if (resposta == DialogResult.Yes)
+                {
+                    CAMADAS.MODEL.Clientes cliente = new CAMADAS.MODEL.Clientes();
 
-            //dtgClientes.DataSource = "";
-            dtgClientes.DataSource = bllClientes.Select();
+                    cliente.id = Convert.ToInt32(txtID.Text);
+                    cliente.nome = txtNome.Text;
+                    cliente.cpf = txtCPF.Text;
+                    cliente.telefone = txtTelefone.Text;
+                    cliente.idade = Convert.ToInt32(txtIdade.Text);
+
+                    CAMADAS.BLL.Clientes bllClientes = new CAMADAS.BLL.Clientes();
+                    bllClientes.Update(cliente);
+
+                    //dtgClientes.DataSource = "";
+                    dtgClientes.DataSource = bllClientes.Select();
+                    limpaControles();
+                }
+                else
+                    limpaControles();
+            }
+            else
+            {
+                string mensagem = "Não há Dados para Editar!";
+                string tituloMensagem = "Editar";
+
+                DialogResult resposta = MessageBox.Show(mensagem, tituloMensagem, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            int idCliente = Convert.ToInt32(txtID.Text);
+            if(txtID.Text != "")
+            {
+                string mensagem = "Deseja Remover o Cliente?";
+                string tituloMensagem = "Remover";
 
-            CAMADAS.BLL.Clientes bllClientes = new CAMADAS.BLL.Clientes();
-            bllClientes.Delete(idCliente);
+                DialogResult resposta = MessageBox.Show(mensagem, tituloMensagem, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-            //dtgClientes.DataSource = "";
-            dtgClientes.DataSource = bllClientes.Select();
+                if (resposta == DialogResult.Yes)
+                {
+                    int idCliente = Convert.ToInt32(txtID.Text);
+
+                    CAMADAS.BLL.Clientes bllClientes = new CAMADAS.BLL.Clientes();
+                    bllClientes.Delete(idCliente);
+
+                    //dtgClientes.DataSource = "";
+                    dtgClientes.DataSource = bllClientes.Select();
+                    limpaControles();
+                }
+                else
+                    limpaControles();
+            }
+            else
+            {
+                string mensagem = "Não há Dados para Remover!";
+                string tituloMensagem = "Remover";
+
+                DialogResult resposta = MessageBox.Show(mensagem, tituloMensagem, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            limpaControles();
+            habilitaControles(true);
+            txtNome.Focus();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -80,6 +160,7 @@ namespace Internet.FORMS
             txtCPF.Text = dtgClientes.SelectedRows[0].Cells["cpf"].Value.ToString();
             txtTelefone.Text = dtgClientes.SelectedRows[0].Cells["telefone"].Value.ToString();
             txtIdade.Text = dtgClientes.SelectedRows[0].Cells["idade"].Value.ToString();
+            habilitaControles(false);
         }
     }
 }

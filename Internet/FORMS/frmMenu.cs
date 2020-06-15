@@ -49,5 +49,12 @@ namespace Internet.FORMS
             formSobre.MdiParent = this;
             formSobre.Show();
         }
+
+        private void clienteRoteadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClienteRoteador formClienteRoteador = new frmClienteRoteador();
+            formClienteRoteador.MdiParent = this;
+            formClienteRoteador.Show();
+        }
     }
 }
