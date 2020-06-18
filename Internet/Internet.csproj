@@ -97,6 +97,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RELATORIOS\Funcoes.cs" />
+    <Compile Include="RELATORIOS\relatorioClienteRoteador.cs" />
     <EmbeddedResource Include="FORMS\frmClienteRoteador.resx">
       <DependentUpon>frmClienteRoteador.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,5 +155,6 @@
   <ItemGroup>
     <None Include="Resources\search %281%29.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,7 +14,7 @@ namespace Internet.CAMADAS.BLL
             return dalClientes.Select();
         }
 
-        public MODEL.Clientes SelectByID(int id)
+        public List<MODEL.Clientes> SelectByID(int id)
         {
             DAL.Clientes dalClientes = new DAL.Clientes();
             return dalClientes.SelectByID(id);

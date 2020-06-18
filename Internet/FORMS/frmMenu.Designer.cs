@@ -34,11 +34,14 @@
             this.roteadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteRoteadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roteadorRedeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clienteRoteadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.roteadorRedeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hTMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteRoteadorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.roteadorRedeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,8 +100,23 @@
             this.movimentosToolStripMenuItem.Size = new System.Drawing.Size(161, 36);
             this.movimentosToolStripMenuItem.Text = "Movimentos";
             // 
+            // clienteRoteadorToolStripMenuItem
+            // 
+            this.clienteRoteadorToolStripMenuItem.Name = "clienteRoteadorToolStripMenuItem";
+            this.clienteRoteadorToolStripMenuItem.Size = new System.Drawing.Size(270, 36);
+            this.clienteRoteadorToolStripMenuItem.Text = "Cliente/Roteador";
+            this.clienteRoteadorToolStripMenuItem.Click += new System.EventHandler(this.clienteRoteadorToolStripMenuItem_Click);
+            // 
+            // roteadorRedeToolStripMenuItem
+            // 
+            this.roteadorRedeToolStripMenuItem.Name = "roteadorRedeToolStripMenuItem";
+            this.roteadorRedeToolStripMenuItem.Size = new System.Drawing.Size(270, 36);
+            this.roteadorRedeToolStripMenuItem.Text = "Roteador/Rede";
+            // 
             // relatóriosToolStripMenuItem
             // 
+            this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hTMLToolStripMenuItem});
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(131, 36);
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
@@ -117,18 +135,27 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // clienteRoteadorToolStripMenuItem
+            // hTMLToolStripMenuItem
             // 
-            this.clienteRoteadorToolStripMenuItem.Name = "clienteRoteadorToolStripMenuItem";
-            this.clienteRoteadorToolStripMenuItem.Size = new System.Drawing.Size(270, 36);
-            this.clienteRoteadorToolStripMenuItem.Text = "Cliente/Roteador";
-            this.clienteRoteadorToolStripMenuItem.Click += new System.EventHandler(this.clienteRoteadorToolStripMenuItem_Click);
+            this.hTMLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clienteRoteadorToolStripMenuItem1,
+            this.roteadorRedeToolStripMenuItem1});
+            this.hTMLToolStripMenuItem.Name = "hTMLToolStripMenuItem";
+            this.hTMLToolStripMenuItem.Size = new System.Drawing.Size(180, 36);
+            this.hTMLToolStripMenuItem.Text = "HTML";
             // 
-            // roteadorRedeToolStripMenuItem
+            // clienteRoteadorToolStripMenuItem1
             // 
-            this.roteadorRedeToolStripMenuItem.Name = "roteadorRedeToolStripMenuItem";
-            this.roteadorRedeToolStripMenuItem.Size = new System.Drawing.Size(270, 36);
-            this.roteadorRedeToolStripMenuItem.Text = "Roteador/Rede";
+            this.clienteRoteadorToolStripMenuItem1.Name = "clienteRoteadorToolStripMenuItem1";
+            this.clienteRoteadorToolStripMenuItem1.Size = new System.Drawing.Size(270, 36);
+            this.clienteRoteadorToolStripMenuItem1.Text = "Cliente/Roteador";
+            this.clienteRoteadorToolStripMenuItem1.Click += new System.EventHandler(this.clienteRoteadorToolStripMenuItem1_Click);
+            // 
+            // roteadorRedeToolStripMenuItem1
+            // 
+            this.roteadorRedeToolStripMenuItem1.Name = "roteadorRedeToolStripMenuItem1";
+            this.roteadorRedeToolStripMenuItem1.Size = new System.Drawing.Size(270, 36);
+            this.roteadorRedeToolStripMenuItem1.Text = "Roteador/Rede";
             // 
             // frmMenu
             // 
@@ -164,5 +191,8 @@
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteRoteadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem roteadorRedeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hTMLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clienteRoteadorToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem roteadorRedeToolStripMenuItem1;
     }
 }

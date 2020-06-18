@@ -50,7 +50,7 @@ namespace Internet.CAMADAS.DAL
         {
             SqlConnection conexao = new SqlConnection(stringConexao);
 
-            string sql = "INSERT INTO Emprestimo VALUES (@clienteID, @roteadorID, @dataInicio, @dataFim);";
+            string sql = "INSERT INTO clienteRoteador VALUES (@clienteID, @roteadorID, @dataInicio, @dataFim);";
             SqlCommand cmd = new SqlCommand(sql, conexao);
 
             cmd.Parameters.AddWithValue("@clienteID", clienteRoteador.clienteID);

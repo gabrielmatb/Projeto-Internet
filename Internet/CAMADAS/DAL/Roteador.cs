@@ -48,9 +48,9 @@ namespace Internet.CAMADAS.DAL
             return listaRoteador;
         }
 
-        public MODEL.Roteador SelectByID(int id)
+        public List<MODEL.Roteador> SelectByID(int id)
         {
-            MODEL.Roteador roteador = new MODEL.Roteador();
+            List<MODEL.Roteador> listaRoteador = new List<MODEL.Roteador>();
             SqlConnection conexao = new SqlConnection(stringConexao);
             string sql = "SELECT * FROM Roteador WHERE id=@id;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
@@ -60,8 +60,9 @@ namespace Internet.CAMADAS.DAL
             {
                 conexao.Open();
                 SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                if (dados.Read())
+                while (dados.Read())
                 {
+                    MODEL.Roteador roteador = new MODEL.Roteador();
                     roteador.id = Convert.ToInt32(dados["id"].ToString());
                     roteador.nome = dados["nome"].ToString();
                     roteador.marca = dados["marca"].ToString();
@@ -69,7 +70,9 @@ namespace Internet.CAMADAS.DAL
                     roteador.senha = dados["senha"].ToString();
                     roteador.mac = dados["mac"].ToString();
                     roteador.situacao = Convert.ToInt32(dados["situacao"].ToString());
-                }
+
+                    listaRoteador.Add(roteador);
+                } 
             }
             catch
             {
@@ -79,7 +82,7 @@ namespace Internet.CAMADAS.DAL
             {
                 conexao.Close();
             }
-            return roteador;
+            return listaRoteador;
         }
 
         public List<MODEL.Roteador> SelectbyNome(string nome)
@@ -155,7 +158,7 @@ namespace Internet.CAMADAS.DAL
             sql += " WHERE id=@id;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
 
-            roteador.situacao = 1;
+            //roteador.situacao = 1;
             cmd.Parameters.AddWithValue("@id", roteador.id);
             cmd.Parameters.AddWithValue("@nome", roteador.nome);
             cmd.Parameters.AddWithValue("@marca", roteador.marca);

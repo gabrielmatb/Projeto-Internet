@@ -14,7 +14,7 @@ namespace Internet.CAMADAS.BLL
             return dalRoteador.Select();
         }
 
-        public MODEL.Roteador SelectByID(int id)
+        public List<MODEL.Roteador> SelectByID(int id)
         {
             DAL.Roteador dalRoteador = new DAL.Roteador();
             return dalRoteador.SelectByID(id);

@@ -46,9 +46,9 @@ namespace Internet.CAMADAS.DAL
             return listaClientes;
         }
 
-        public MODEL.Clientes SelectByID(int id)
+        public List<MODEL.Clientes> SelectByID(int id)
         {
-            MODEL.Clientes cliente = new MODEL.Clientes();
+            List<MODEL.Clientes> listaCliente = new List<MODEL.Clientes>();
             SqlConnection conexao = new SqlConnection(stringConexao);
             string sql = "SELECT * FROM Clientes WHERE id=@id";
             SqlCommand cmd = new SqlCommand(sql, conexao);
@@ -60,11 +60,14 @@ namespace Internet.CAMADAS.DAL
                 SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 if (dados.Read())
                 {
+                    MODEL.Clientes cliente = new MODEL.Clientes();
                     cliente.id = Convert.ToInt32(dados[0].ToString());
                     cliente.nome = dados["nome"].ToString();
                     cliente.cpf = dados["cpf"].ToString();
                     cliente.telefone = dados["telefone"].ToString();
                     cliente.idade = Convert.ToInt32(dados["idade"].ToString());
+
+                    listaCliente.Add(cliente);
                 }
             }
             catch
@@ -75,7 +78,7 @@ namespace Internet.CAMADAS.DAL
             {
                 conexao.Close();
             }
-            return cliente;
+            return listaCliente;
         }
 
         public List<MODEL.Clientes> SelectbyNome(string nome)
