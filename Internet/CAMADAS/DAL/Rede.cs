@@ -47,6 +47,78 @@ namespace Internet.CAMADAS.DAL
             return listaRede;
         }
 
+        public List<MODEL.Rede> SelectByID(int id)
+        {
+            List<MODEL.Rede> listaRede = new List<MODEL.Rede>();
+            SqlConnection conexao = new SqlConnection(stringConexao);
+            string sql = "SELECT * FROM Rede WHERE id=@id;";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.Rede rede = new MODEL.Rede();
+                    rede.id = Convert.ToInt32(dados["id"].ToString());
+                    rede.ip = dados["ip"].ToString();
+                    rede.gateway = dados["gateway"].ToString();
+                    rede.mascara = dados["mascara"].ToString();
+                    rede.valor = Convert.ToInt32(dados["valor"].ToString());
+                    rede.situacao = Convert.ToInt32(dados["situacao"].ToString());
+
+                    listaRede.Add(rede);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Erro ao Listar Rede por ID...");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return listaRede;
+        }
+
+        public List<MODEL.Rede> SelectbyIP(string ip)
+        {
+            List<MODEL.Rede> listaRede = new List<MODEL.Rede>();
+            SqlConnection conexao = new SqlConnection(stringConexao);
+            string sql = "SELECT * FROM Rede WHERE (ip LIKE @ip);";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@ip", "%" + ip + "%");
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.Rede rede = new MODEL.Rede();
+                    rede.id = Convert.ToInt32(dados["id"].ToString());
+                    rede.ip = dados["ip"].ToString();
+                    rede.gateway = dados["gateway"].ToString();
+                    rede.mascara = dados["mascara"].ToString();
+                    rede.valor = Convert.ToInt32(dados["valor"].ToString());
+                    rede.situacao = Convert.ToInt32(dados["situacao"].ToString());
+
+                    listaRede.Add(rede);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Erro ao Listar Rede por IP...");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return listaRede;
+        }
+
         public void Insert(MODEL.Rede rede)
         {
             SqlConnection conexao = new SqlConnection(stringConexao);

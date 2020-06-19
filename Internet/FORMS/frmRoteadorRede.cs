@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace Internet.FORMS
 {
-    public partial class frmClienteRoteador : Form
+    public partial class frmRoteadorRede : Form
     {
-        public frmClienteRoteador()
+        public frmRoteadorRede()
         {
             InitializeComponent();
         }
 
-        private void frmClienteRoteador_Load(object sender, EventArgs e)
+        private void frmRoteadorRede_Load(object sender, EventArgs e)
         {
-            CAMADAS.BLL.Clientes bllClientes = new CAMADAS.BLL.Clientes();
-            cmbCliente.DisplayMember = "nome";
-            cmbCliente.ValueMember = "id";
-            cmbCliente.DataSource = bllClientes.Select();
+            CAMADAS.BLL.Rede bllRede = new CAMADAS.BLL.Rede();
+            cmbRede.DisplayMember = "ip";
+            cmbRede.ValueMember = "id";
+            cmbRede.DataSource = bllRede.Select();
 
-            dtgCliente.DataSource = "";
-            dtgCliente.DataSource = bllClientes.Select();
+            dtgRede.DataSource = "";
+            dtgRede.DataSource = bllRede.Select();
 
             CAMADAS.BLL.Roteador bllRoteador = new CAMADAS.BLL.Roteador();
             cmbRoteador.DisplayMember = "nome";
@@ -35,9 +35,9 @@ namespace Internet.FORMS
             dtgRoteador.DataSource = "";
             dtgRoteador.DataSource = bllRoteador.Select();
 
-            CAMADAS.BLL.ClienteRoteador bllClienteRoteador = new CAMADAS.BLL.ClienteRoteador();
-            dtgClienteRoteador.DataSource = "";
-            dtgClienteRoteador.DataSource = bllClienteRoteador.Select();
+            CAMADAS.BLL.RoteadorRede bllRoteadorRede = new CAMADAS.BLL.RoteadorRede();
+            dtgRoteadorRede.DataSource = "";
+            dtgRoteadorRede.DataSource = bllRoteadorRede.Select();
 
             habilitaCampos(false);
             dtpDataFinal.Enabled = false;
@@ -51,7 +51,7 @@ namespace Internet.FORMS
         private void limpaCampos()
         {
             lblOperacaoID.Text = "-1";
-            txtClienteID.Text = "";
+            txtRedeID.Text = "";
             txtRoteadorID.Text = "";
             dtpData.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             dtpDataFinal.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
@@ -59,8 +59,8 @@ namespace Internet.FORMS
 
         private void habilitaCampos(bool status)
         {
-            txtClienteID.Enabled = status;
-            cmbCliente.Enabled = status;
+            txtRedeID.Enabled = status;
+            cmbRede.Enabled = status;
             txtRoteadorID.Enabled = status;
             cmbRoteador.Enabled = status;
             dtpData.Enabled = status;
@@ -72,45 +72,44 @@ namespace Internet.FORMS
             btnEditar.Enabled = !status;
             btnDevolver.Enabled = !status;
         }
-
-        //cliente
-        private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        //rede
+        private void cmbRede_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtClienteID.Text = cmbCliente.SelectedValue.ToString();
+            txtRedeID.Text = cmbRede.SelectedValue.ToString();
         }
 
-        private void cmbCliente_Leave(object sender, EventArgs e)
+        private void cmbRede_Leave(object sender, EventArgs e)
         {
-            cmbCliente_SelectedIndexChanged(null, null);
+            cmbRede_SelectedIndexChanged(null, null);
         }
 
-        private void txtClienteID_Leave(object sender, EventArgs e)
+        private void txtRedeID_Leave(object sender, EventArgs e)
         {
             try
             {
-                if (txtClienteID.Text != "")
+                if (txtRedeID.Text != "")
                 {
-                    cmbCliente.SelectedValue = Convert.ToInt32(txtClienteID.Text);
+                    cmbRede.SelectedValue = Convert.ToInt32(txtRedeID.Text);
                 }
             }
             catch
             {
-                MessageBox.Show("Cliente Invalido");
-                cmbCliente.Focus();
+                MessageBox.Show("Rede Invalida");
+                cmbRede.Focus();
             }
         }
 
-        private void dtgCliente_DoubleClick(object sender, EventArgs e)
+        private void dtgRede_DoubleClick(object sender, EventArgs e)
         {
-            cmbCliente.SelectedValue = Convert.ToInt32(dtgCliente.SelectedRows[0].Cells["id"].Value.ToString());
-            txtClienteID.Text = dtgCliente.SelectedRows[0].Cells["id"].Value.ToString();
+            cmbRede.SelectedValue = Convert.ToInt32(dtgRede.SelectedRows[0].Cells["id_rede"].Value.ToString());
+            txtRedeID.Text = dtgRede.SelectedRows[0].Cells["id_rede"].Value.ToString();
         }
-
         //roteador
         private void cmbRoteador_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtRoteadorID.Text = cmbRoteador.SelectedValue.ToString();
         }
+
         private void cmbRoteador_Leave(object sender, EventArgs e)
         {
             try
@@ -145,14 +144,13 @@ namespace Internet.FORMS
             cmbRoteador.SelectedValue = Convert.ToInt32(dtgRoteador.SelectedRows[0].Cells["id_roteador"].Value.ToString());
             txtRoteadorID.Text = dtgRoteador.SelectedRows[0].Cells["id_roteador"].Value.ToString();
         }
-
         //botoes
         private void btnNovo_Click(object sender, EventArgs e)
         {
             limpaCampos();
             habilitaCampos(true);
             lblOperacaoID.Text = "-1";
-            cmbCliente.Focus();
+            cmbRede.Focus();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -162,80 +160,80 @@ namespace Internet.FORMS
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            CAMADAS.MODEL.ClienteRoteador clienteRoteador = new CAMADAS.MODEL.ClienteRoteador();
+            CAMADAS.MODEL.RoteadorRede roteadorRede = new CAMADAS.MODEL.RoteadorRede();
 
-            clienteRoteador.clienteID = Convert.ToInt32(txtClienteID.Text);
-            clienteRoteador.roteadorID = Convert.ToInt32(txtRoteadorID.Text);
-            clienteRoteador.dataInicio = Convert.ToDateTime(dtpData.Text);
-            clienteRoteador.dataFim = Convert.ToDateTime("01/01/1900");
+            roteadorRede.roteadorID = Convert.ToInt32(txtRoteadorID.Text);
+            roteadorRede.redeID = Convert.ToInt32(txtRedeID.Text);
+            roteadorRede.dataInicio = Convert.ToDateTime(dtpData.Text);
+            roteadorRede.dataFim = Convert.ToDateTime("01/01/1900");
 
-            CAMADAS.BLL.ClienteRoteador bllClienteRoteador = new CAMADAS.BLL.ClienteRoteador();
+            CAMADAS.BLL.RoteadorRede bllRoteadorRede = new CAMADAS.BLL.RoteadorRede();
 
             if (lblOperacaoID.Text == "-1")
             {
-                //CAMADAS.DAL.ClienteRoteador dalClienteRoteador = new CAMADAS.DAL.ClienteRoteador();
-                CAMADAS.BLL.Roteador bllRoteador = new CAMADAS.BLL.Roteador();
-                List<CAMADAS.MODEL.Roteador> listaRoteador = bllRoteador.SelectByID(clienteRoteador.roteadorID);
-                CAMADAS.MODEL.Roteador roteador = listaRoteador[0];
+                //CAMADAS.DAL.RoteadorRede dalRoteadorRede = new CAMADAS.DAL.RoteadorRede();
+                CAMADAS.BLL.Rede bllRede = new CAMADAS.BLL.Rede();
+                List<CAMADAS.MODEL.Rede> listaRede = bllRede.SelectByID(roteadorRede.redeID);
+                CAMADAS.MODEL.Rede rede = listaRede[0];
 
-                if (roteador.situacao == 1)
+                if (rede.situacao == 1)
                 {
-                    bllClienteRoteador.Insert(clienteRoteador);
+                    bllRoteadorRede.Insert(roteadorRede);
                     limpaCampos();
                 }
                 else
                 {
-                    string mensagem = "Roteador já em uso";
+                    string mensagem = "Rede já em uso";
                     MessageBox.Show(mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else
             {
-                clienteRoteador.id = Convert.ToInt32(lblOperacaoID.Text);
-                bllClienteRoteador.Update(clienteRoteador);
+                roteadorRede.id = Convert.ToInt32(lblOperacaoID.Text);
+                bllRoteadorRede.Update(roteadorRede);
             }
 
-            dtgClienteRoteador.DataSource = bllClienteRoteador.Select();
+            dtgRoteadorRede.DataSource = bllRoteadorRede.Select();
         }
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
             dtpDataFinal.Enabled = true;
 
-            CAMADAS.MODEL.ClienteRoteador clienteRoteador = new CAMADAS.MODEL.ClienteRoteador();
+            CAMADAS.MODEL.RoteadorRede roteadorRede = new CAMADAS.MODEL.RoteadorRede();
 
-            clienteRoteador.id = Convert.ToInt32((lblOperacaoID.Text).ToString());
-            clienteRoteador.clienteID = Convert.ToInt32((txtClienteID.Text).ToString());
-            clienteRoteador.roteadorID = Convert.ToInt32((txtRoteadorID.Text).ToString());
-            clienteRoteador.dataInicio = Convert.ToDateTime(dtpData.Text);
-            clienteRoteador.dataFim = Convert.ToDateTime(dtpDataFinal.Text);
+            roteadorRede.id = Convert.ToInt32((lblOperacaoID.Text).ToString());
+            roteadorRede.roteadorID = Convert.ToInt32((txtRoteadorID.Text).ToString());
+            roteadorRede.redeID = Convert.ToInt32((txtRedeID.Text).ToString());
+            roteadorRede.dataInicio = Convert.ToDateTime(dtpData.Text);
+            roteadorRede.dataFim = Convert.ToDateTime(dtpDataFinal.Text);
 
-            CAMADAS.DAL.ClienteRoteador dalClienteRoteador = new CAMADAS.DAL.ClienteRoteador();
+            CAMADAS.DAL.RoteadorRede dalRoteadorRede = new CAMADAS.DAL.RoteadorRede();
 
-            CAMADAS.BLL.Roteador bllRoteador = new CAMADAS.BLL.Roteador();
+            CAMADAS.BLL.Rede bllRede = new CAMADAS.BLL.Rede();
 
-            List<CAMADAS.MODEL.Roteador> listaRoteador = bllRoteador.SelectByID(clienteRoteador.roteadorID);
-            CAMADAS.MODEL.Roteador roteador = listaRoteador[0];
+            List<CAMADAS.MODEL.Rede> listaRede = bllRede.SelectByID(roteadorRede.redeID);
+            CAMADAS.MODEL.Rede rede = listaRede[0];
 
-            CAMADAS.BLL.ClienteRoteador bllClienteRoteador = new CAMADAS.BLL.ClienteRoteador();
-            if ((lblOperacaoID.Text != "-1") && (roteador.situacao == 2))
+            CAMADAS.BLL.RoteadorRede bllRoteadorRede = new CAMADAS.BLL.RoteadorRede();
+            if ((lblOperacaoID.Text != "-1") && (rede.situacao == 2))
             {
-                bllClienteRoteador.Devolver(clienteRoteador);
+                bllRoteadorRede.Devolver(roteadorRede);
 
-                string mensagem = "Roteador Devolvido!";
+                string mensagem = "Rede Devolvido!";
                 string tituloMensagem = "Devolver";
 
                 DialogResult resposta = MessageBox.Show(mensagem, tituloMensagem, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                string mensagem = "Roteador não está disponível para Entrega!";
+                string mensagem = "Rede não está disponível para Entrega!";
                 string tituloMensagem = "Devolver";
 
                 DialogResult resposta = MessageBox.Show(mensagem, tituloMensagem, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            
-            dtgClienteRoteador.DataSource = bllClienteRoteador.Select();
+
+            dtgRoteadorRede.DataSource = bllRoteadorRede.Select();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -249,6 +247,7 @@ namespace Internet.FORMS
             gpbFiltrar.Visible = !gpbFiltrar.Visible;
             rdbID.Enabled = false;
             rdbNome.Enabled = false;
+            rdbIP.Enabled = false;
             txtPesquisar.Enabled = false;
             btnPesquisarImagem.Enabled = false;
         }
@@ -258,19 +257,20 @@ namespace Internet.FORMS
             this.Dispose();
         }
 
-        private void dtgClienteRoteador_DoubleClick(object sender, EventArgs e)
+        private void dtgRoteadorRede_DoubleClick(object sender, EventArgs e)
         {
-            lblOperacaoID.Text = dtgClienteRoteador.SelectedRows[0].Cells["id_ClienteRoteador"].Value.ToString();
-            cmbCliente.SelectedValue = Convert.ToInt32(dtgClienteRoteador.SelectedRows[0].Cells["clienteID"].Value.ToString());
-            txtClienteID.Text = dtgClienteRoteador.SelectedRows[0].Cells["clienteID"].Value.ToString();
-            cmbRoteador.SelectedValue = Convert.ToInt32(dtgClienteRoteador.SelectedRows[0].Cells["roteadorID"].Value.ToString());
-            txtRoteadorID.Text = dtgClienteRoteador.SelectedRows[0].Cells["roteadorID"].Value.ToString();
-            dtpData.Value = Convert.ToDateTime(dtgClienteRoteador.SelectedRows[0].Cells["dataInicio"].Value.ToString());
-            dtpDataFinal.Value = Convert.ToDateTime(dtgClienteRoteador.SelectedRows[0].Cells["dataFim"].Value.ToString());
+            lblOperacaoID.Text = dtgRoteadorRede.SelectedRows[0].Cells["id_RoteadorRede"].Value.ToString();
+            cmbRoteador.SelectedValue = Convert.ToInt32(dtgRoteadorRede.SelectedRows[0].Cells["roteadorID"].Value.ToString());
+            txtRoteadorID.Text = dtgRoteadorRede.SelectedRows[0].Cells["roteadorID"].Value.ToString();
+            cmbRede.SelectedValue = Convert.ToInt32(dtgRoteadorRede.SelectedRows[0].Cells["redeID"].Value.ToString());
+            txtRedeID.Text = dtgRoteadorRede.SelectedRows[0].Cells["redeID"].Value.ToString();
+            dtpData.Value = Convert.ToDateTime(dtgRoteadorRede.SelectedRows[0].Cells["dataInicio"].Value.ToString());
+            dtpDataFinal.Value = Convert.ToDateTime(dtgRoteadorRede.SelectedRows[0].Cells["dataFim"].Value.ToString());
 
             habilitaBotoes(false);
 
-            if(dtpDataFinal.Value == Convert.ToDateTime("01/01/1900")){
+            if (dtpDataFinal.Value == Convert.ToDateTime("01/01/1900"))
+            {
                 dtpDataFinal.Enabled = true;
             }
             else
@@ -282,10 +282,19 @@ namespace Internet.FORMS
 
         private void cmbSelecao_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbSelecao.SelectedItem != null)
+            if (cmbSelecao.SelectedItem != null)
             {
+                if(cmbSelecao.SelectedItem == "Rede")
+                {
+                    rdbIP.Enabled = true;
+                    rdbNome.Enabled = false;
+                }
+                else
+                {
+                    rdbNome.Enabled = true;
+                    rdbIP.Enabled = false;
+                }
                 rdbID.Enabled = true;
-                rdbNome.Enabled = true;
             }
         }
 
@@ -299,9 +308,14 @@ namespace Internet.FORMS
             txtPesquisar.Enabled = true;
         }
 
+        private void rdbIP_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisar.Enabled = true;
+        }
+
         private void txtPesquisar_TextChanged(object sender, EventArgs e)
         {
-            if(txtPesquisar.Text != "")
+            if (txtPesquisar.Text != "")
             {
                 btnPesquisarImagem.Enabled = true;
             }
@@ -317,18 +331,18 @@ namespace Internet.FORMS
             string tituloMensagem;
             try
             {
-                if (cmbSelecao.SelectedItem.ToString() == "Clientes")
+                if (cmbSelecao.SelectedItem.ToString() == "Rede")
                 {
-                    CAMADAS.BLL.Clientes bllClientes = new CAMADAS.BLL.Clientes();
+                    CAMADAS.BLL.Rede bllRede = new CAMADAS.BLL.Rede();
                     if (rdbID.Checked)
                     {
-                        int idCliente = Convert.ToInt32(txtPesquisar.Text);
-                        dtgCliente.DataSource = bllClientes.SelectByID(idCliente);
+                        int idRede = Convert.ToInt32(txtPesquisar.Text);
+                        dtgRede.DataSource = bllRede.SelectByID(idRede);
                     }
-                    else if (rdbNome.Checked)
+                    else if (rdbIP.Checked)
                     {
-                        string nomeCliente = txtPesquisar.Text;
-                        dtgCliente.DataSource = bllClientes.SelectByNome(nomeCliente);
+                        string ipRede = txtPesquisar.Text;
+                        dtgRede.DataSource = bllRede.SelectByIP(ipRede);
                     }
                 }
                 else if (cmbSelecao.SelectedItem.ToString() == "Roteador")
@@ -356,24 +370,27 @@ namespace Internet.FORMS
 
         private void rdbTodos_CheckedChanged(object sender, EventArgs e)
         {
-            CAMADAS.BLL.Clientes bllClientes = new CAMADAS.BLL.Clientes();
+            CAMADAS.BLL.Rede bllRede = new CAMADAS.BLL.Rede();
             CAMADAS.BLL.Roteador bllRoteador = new CAMADAS.BLL.Roteador();
-            
-            if (cmbSelecao.SelectedItem.ToString() == "Clientes")
+
+            if (cmbSelecao.SelectedItem.ToString() == "Rede")
             {
-                dtgCliente.DataSource = bllClientes.Select();
+                dtgRede.DataSource = bllRede.Select();
             }
-                else if (cmbSelecao.SelectedItem.ToString() == "Roteador")
-                {
-                     dtgRoteador.DataSource = bllRoteador.Select();
-                }
-                    else if (cmbSelecao.SelectedItem.ToString() == "Geral")
-                    {
-                        dtgCliente.DataSource = bllClientes.Select();
-                        dtgRoteador.DataSource = bllRoteador.Select();
-                        rdbID.Enabled = false;
-                        rdbNome.Enabled = false;
-                    }
+            else if (cmbSelecao.SelectedItem.ToString() == "Roteador")
+            {
+                dtgRoteador.DataSource = bllRoteador.Select();
+            }
+            else if (cmbSelecao.SelectedItem.ToString() == "Geral")
+            {
+                dtgRede.DataSource = bllRede.Select();
+                dtgRoteador.DataSource = bllRoteador.Select();
+                rdbID.Enabled = false;
+                rdbNome.Enabled = false;
+                rdbIP.Enabled = false;
+            }
         }
+
+        
     }
 }

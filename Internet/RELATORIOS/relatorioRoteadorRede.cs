@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Internet.RELATORIOS
 {
-    public class relatorioClienteRoteador
+    public class relatorioRoteadorRede
     {
-        public static void relClienteRoteador()
+        public static void relRoteadorRede()
         {
-            CAMADAS.BLL.ClienteRoteador bllClienteRoteador = new CAMADAS.BLL.ClienteRoteador();
-            List<CAMADAS.MODEL.ClienteRoteador> listaClienteRoteador = new List<CAMADAS.MODEL.ClienteRoteador>();
-            listaClienteRoteador = bllClienteRoteador.Select();
+            CAMADAS.BLL.RoteadorRede bllRoteadorRede = new CAMADAS.BLL.RoteadorRede();
+            List<CAMADAS.MODEL.RoteadorRede> listaRoteadorRede = new List<CAMADAS.MODEL.RoteadorRede>();
+            listaRoteadorRede = bllRoteadorRede.Select();
 
             string pasta = Funcoes.deretorioPasta();
-            string arquivo = pasta + @"\RelatorioClienteRoteador.html";
+            string arquivo = pasta + @"\RelatorioRoteadorRede.html";
             StreamWriter sw = new StreamWriter(arquivo);
             using (sw)
             {
@@ -26,14 +26,14 @@ namespace Internet.RELATORIOS
                 sw.WriteLine("<meta charset='UTF - 8'>");
                 sw.WriteLine("<meta name='viewport' content='width = device - width, initial - scale = 1.0'>");
                 sw.WriteLine("<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk' crossorigin='anonymous'>");
-                sw.WriteLine("<title>Relatorio Cliente - Roteador</title>");
+                sw.WriteLine("<title>Relatorio Roteador - Rede</title>");
 
                 sw.WriteLine("</head>");
 
                 sw.WriteLine("<body style = 'background-color:black'>");
                 sw.WriteLine("<div style = 'color:white'");
                 sw.WriteLine("<br><hr border='5px' />");
-                sw.WriteLine("<h2> Relatório de Cliente/Roteador </h2>");
+                sw.WriteLine("<h2> Relatório de Roteador/Rede </h2>");
                 sw.WriteLine("<hr border='5px' /><br>");
                 sw.WriteLine("</div>");
                 sw.WriteLine("<table class='table table-striped table-dark'>");
@@ -42,21 +42,21 @@ namespace Internet.RELATORIOS
                 sw.WriteLine("<tr align='center'>");
 
                 sw.WriteLine("<th>ID</th>");
-                sw.WriteLine("<th>Cliente</th>");
                 sw.WriteLine("<th>Roteador</th>");
+                sw.WriteLine("<th>Rede</th>");
                 sw.WriteLine("<th>Data Inicio</th>");
                 sw.WriteLine("<th>Data Fim</th>");
 
                 int contador = 0;
-                foreach (CAMADAS.MODEL.ClienteRoteador clienteRoteador in listaClienteRoteador)
+                foreach (CAMADAS.MODEL.RoteadorRede roteadorRede in listaRoteadorRede)
                 {
                     sw.WriteLine("<tr align='center'>");
 
-                    sw.WriteLine("<th>" + clienteRoteador.id + "</th>");
-                    sw.WriteLine("<td>" + clienteRoteador.clienteID + "</td>");
-                    sw.WriteLine("<td>" + clienteRoteador.roteadorID + "</td>");
-                    sw.WriteLine("<td>" + clienteRoteador.dataInicio + "</td>");
-                    sw.WriteLine("<td>" + clienteRoteador.dataFim + "</td>");
+                    sw.WriteLine("<th>" + roteadorRede.id + "</th>");
+                    sw.WriteLine("<td>" + roteadorRede.roteadorID + "</td>");
+                    sw.WriteLine("<td>" + roteadorRede.redeID + "</td>");
+                    sw.WriteLine("<td>" + roteadorRede.dataInicio + "</td>");
+                    sw.WriteLine("<td>" + roteadorRede.dataFim + "</td>");
 
                     sw.WriteLine("</tr>");
 

@@ -50,15 +50,18 @@
     <Compile Include="CAMADAS\BLL\Clientes.cs" />
     <Compile Include="CAMADAS\BLL\Rede.cs" />
     <Compile Include="CAMADAS\BLL\Roteador.cs" />
+    <Compile Include="CAMADAS\BLL\RoteadorRede.cs" />
     <Compile Include="CAMADAS\DAL\ClienteRoteador.cs" />
     <Compile Include="CAMADAS\DAL\Clientes.cs" />
     <Compile Include="CAMADAS\DAL\Conexao.cs" />
     <Compile Include="CAMADAS\DAL\Rede.cs" />
     <Compile Include="CAMADAS\DAL\Roteador.cs" />
+    <Compile Include="CAMADAS\DAL\RoteadorRede.cs" />
     <Compile Include="CAMADAS\MODEL\ClienteRoteador.cs" />
     <Compile Include="CAMADAS\MODEL\Clientes.cs" />
     <Compile Include="CAMADAS\MODEL\Rede.cs" />
     <Compile Include="CAMADAS\MODEL\Roteador.cs" />
+    <Compile Include="CAMADAS\MODEL\RoteadorRede.cs" />
     <Compile Include="FORMS\frmClienteRoteador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +92,12 @@
     <Compile Include="FORMS\frmRoteador.Designer.cs">
       <DependentUpon>frmRoteador.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\frmRoteadorRede.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmRoteadorRede.Designer.cs">
+      <DependentUpon>frmRoteadorRede.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\frmSobre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +108,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RELATORIOS\Funcoes.cs" />
     <Compile Include="RELATORIOS\relatorioClienteRoteador.cs" />
+    <Compile Include="RELATORIOS\relatorioRoteadorRede.cs" />
     <EmbeddedResource Include="FORMS\frmClienteRoteador.resx">
       <DependentUpon>frmClienteRoteador.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\frmRoteador.resx">
       <DependentUpon>frmRoteador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmRoteadorRede.resx">
+      <DependentUpon>frmRoteadorRede.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\frmSobre.resx">
       <DependentUpon>frmSobre.cs</DependentUpon>

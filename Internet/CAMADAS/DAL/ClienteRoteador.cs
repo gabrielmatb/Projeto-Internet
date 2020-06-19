@@ -106,7 +106,7 @@ namespace Internet.CAMADAS.DAL
         {
             SqlConnection conexao = new SqlConnection(stringConexao);
 
-            string sql = "DELETE FROM Emprestimo WHERE id=@id;";
+            string sql = "DELETE FROM ClienteRoteador WHERE id=@id;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
 
             cmd.Parameters.AddWithValue("@id", idClienteRoteador);

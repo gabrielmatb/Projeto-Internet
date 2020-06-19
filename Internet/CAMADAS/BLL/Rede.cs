@@ -13,6 +13,18 @@ namespace Internet.CAMADAS.BLL
             DAL.Rede dalRede = new DAL.Rede();
             return dalRede.Select();
         }
+
+        public List<MODEL.Rede> SelectByID(int id)
+        {
+            DAL.Rede dalRede = new DAL.Rede();
+            return dalRede.SelectByID(id);
+        }
+
+        public List<MODEL.Rede> SelectByIP(string ip)
+        {
+            DAL.Rede dalRede = new DAL.Rede();
+            return dalRede.SelectbyIP(ip);
+        }
         public void Insert(MODEL.Rede rede)
         {
             DAL.Rede dalRede = new DAL.Rede();

@@ -61,5 +61,17 @@ namespace Internet.FORMS
         {
             RELATORIOS.relatorioClienteRoteador.relClienteRoteador();
         }
+
+        private void roteadorRedeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRoteadorRede formRoteadorRede = new frmRoteadorRede();
+            formRoteadorRede.MdiParent = this;
+            formRoteadorRede.Show();
+        }
+
+        private void roteadorRedeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            RELATORIOS.relatorioRoteadorRede.relRoteadorRede();
+        }
     }
 }
