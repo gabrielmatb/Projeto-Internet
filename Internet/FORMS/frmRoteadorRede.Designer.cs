@@ -29,7 +29,13 @@
         private void InitializeComponent()
         {
             this.dtgRoteadorRede = new System.Windows.Forms.DataGridView();
+            this.id_RoteadorRede = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roteadorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.redeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataFim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbFiltrar = new System.Windows.Forms.GroupBox();
+            this.rdbIP = new System.Windows.Forms.RadioButton();
             this.cmbSelecao = new System.Windows.Forms.ComboBox();
             this.btnPesquisarImagem = new System.Windows.Forms.Button();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
@@ -52,6 +58,12 @@
             this.mac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgRede = new System.Windows.Forms.DataGridView();
+            this.id_rede = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gateway = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mascara = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.situacao_rede = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnDevolver = new System.Windows.Forms.Button();
@@ -65,18 +77,6 @@
             this.lblRede = new System.Windows.Forms.Label();
             this.lblOp = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.id_rede = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gateway = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mascara = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.situacao_rede = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_RoteadorRede = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roteadorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.redeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataFim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rdbIP = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtgRoteadorRede)).BeginInit();
             this.gpbFiltrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgRoteador)).BeginInit();
@@ -99,6 +99,40 @@
             this.dtgRoteadorRede.TabIndex = 48;
             this.dtgRoteadorRede.DoubleClick += new System.EventHandler(this.dtgRoteadorRede_DoubleClick);
             // 
+            // id_RoteadorRede
+            // 
+            this.id_RoteadorRede.DataPropertyName = "id";
+            this.id_RoteadorRede.HeaderText = "ID";
+            this.id_RoteadorRede.Name = "id_RoteadorRede";
+            this.id_RoteadorRede.Visible = false;
+            this.id_RoteadorRede.Width = 60;
+            // 
+            // roteadorID
+            // 
+            this.roteadorID.DataPropertyName = "roteadorID";
+            this.roteadorID.HeaderText = "roteadorID";
+            this.roteadorID.Name = "roteadorID";
+            this.roteadorID.Width = 95;
+            // 
+            // redeID
+            // 
+            this.redeID.DataPropertyName = "redeID";
+            this.redeID.HeaderText = "redeID";
+            this.redeID.Name = "redeID";
+            // 
+            // dataInicio
+            // 
+            this.dataInicio.DataPropertyName = "dataInicio";
+            this.dataInicio.HeaderText = "dataInicio";
+            this.dataInicio.Name = "dataInicio";
+            this.dataInicio.Visible = false;
+            // 
+            // dataFim
+            // 
+            this.dataFim.DataPropertyName = "dataFim";
+            this.dataFim.HeaderText = "dataFim";
+            this.dataFim.Name = "dataFim";
+            // 
             // gpbFiltrar
             // 
             this.gpbFiltrar.Controls.Add(this.rdbIP);
@@ -115,6 +149,18 @@
             this.gpbFiltrar.TabIndex = 47;
             this.gpbFiltrar.TabStop = false;
             this.gpbFiltrar.Text = "Filtrar:";
+            // 
+            // rdbIP
+            // 
+            this.rdbIP.AutoSize = true;
+            this.rdbIP.Location = new System.Drawing.Point(18, 143);
+            this.rdbIP.Name = "rdbIP";
+            this.rdbIP.Size = new System.Drawing.Size(44, 28);
+            this.rdbIP.TabIndex = 6;
+            this.rdbIP.TabStop = true;
+            this.rdbIP.Text = "IP";
+            this.rdbIP.UseVisualStyleBackColor = true;
+            this.rdbIP.CheckedChanged += new System.EventHandler(this.rdbIP_CheckedChanged);
             // 
             // cmbSelecao
             // 
@@ -332,10 +378,50 @@
             this.dtgRede.TabIndex = 38;
             this.dtgRede.DoubleClick += new System.EventHandler(this.dtgRede_DoubleClick);
             // 
+            // id_rede
+            // 
+            this.id_rede.DataPropertyName = "id";
+            this.id_rede.HeaderText = "ID";
+            this.id_rede.Name = "id_rede";
+            // 
+            // ip
+            // 
+            this.ip.DataPropertyName = "ip";
+            this.ip.HeaderText = "IP";
+            this.ip.Name = "ip";
+            // 
+            // gateway
+            // 
+            this.gateway.DataPropertyName = "gateway";
+            this.gateway.HeaderText = "GATEWAY";
+            this.gateway.Name = "gateway";
+            this.gateway.Visible = false;
+            // 
+            // mascara
+            // 
+            this.mascara.DataPropertyName = "mascara";
+            this.mascara.HeaderText = "MASCARA";
+            this.mascara.Name = "mascara";
+            this.mascara.Visible = false;
+            // 
+            // valor
+            // 
+            this.valor.DataPropertyName = "valor";
+            this.valor.HeaderText = "VALOR";
+            this.valor.Name = "valor";
+            this.valor.Visible = false;
+            // 
+            // situacao_rede
+            // 
+            this.situacao_rede.DataPropertyName = "situacao";
+            this.situacao_rede.HeaderText = "SITUACAO";
+            this.situacao_rede.Name = "situacao_rede";
+            this.situacao_rede.Visible = false;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(741, 446);
+            this.btnCancelar.Location = new System.Drawing.Point(741, 444);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(112, 36);
             this.btnCancelar.TabIndex = 37;
@@ -346,7 +432,7 @@
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(741, 497);
+            this.btnSair.Location = new System.Drawing.Point(741, 495);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(112, 36);
             this.btnSair.TabIndex = 36;
@@ -357,7 +443,7 @@
             // btnDevolver
             // 
             this.btnDevolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevolver.Location = new System.Drawing.Point(613, 446);
+            this.btnDevolver.Location = new System.Drawing.Point(613, 444);
             this.btnDevolver.Name = "btnDevolver";
             this.btnDevolver.Size = new System.Drawing.Size(112, 36);
             this.btnDevolver.TabIndex = 35;
@@ -368,7 +454,7 @@
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(741, 395);
+            this.btnEditar.Location = new System.Drawing.Point(741, 393);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(112, 36);
             this.btnEditar.TabIndex = 34;
@@ -379,7 +465,7 @@
             // btnPesquisar
             // 
             this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.Location = new System.Drawing.Point(869, 446);
+            this.btnPesquisar.Location = new System.Drawing.Point(869, 444);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(112, 36);
             this.btnPesquisar.TabIndex = 33;
@@ -390,7 +476,7 @@
             // btnGravar
             // 
             this.btnGravar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGravar.Location = new System.Drawing.Point(869, 395);
+            this.btnGravar.Location = new System.Drawing.Point(869, 393);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(112, 36);
             this.btnGravar.TabIndex = 32;
@@ -401,7 +487,7 @@
             // btnNovo
             // 
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovo.Location = new System.Drawing.Point(613, 395);
+            this.btnNovo.Location = new System.Drawing.Point(613, 393);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(112, 36);
             this.btnNovo.TabIndex = 31;
@@ -468,92 +554,6 @@
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
             // 
-            // id_rede
-            // 
-            this.id_rede.DataPropertyName = "id";
-            this.id_rede.HeaderText = "ID";
-            this.id_rede.Name = "id_rede";
-            // 
-            // ip
-            // 
-            this.ip.DataPropertyName = "ip";
-            this.ip.HeaderText = "IP";
-            this.ip.Name = "ip";
-            // 
-            // gateway
-            // 
-            this.gateway.DataPropertyName = "gateway";
-            this.gateway.HeaderText = "GATEWAY";
-            this.gateway.Name = "gateway";
-            this.gateway.Visible = false;
-            // 
-            // mascara
-            // 
-            this.mascara.DataPropertyName = "mascara";
-            this.mascara.HeaderText = "MASCARA";
-            this.mascara.Name = "mascara";
-            this.mascara.Visible = false;
-            // 
-            // valor
-            // 
-            this.valor.DataPropertyName = "valor";
-            this.valor.HeaderText = "VALOR";
-            this.valor.Name = "valor";
-            this.valor.Visible = false;
-            // 
-            // situacao_rede
-            // 
-            this.situacao_rede.DataPropertyName = "situacao";
-            this.situacao_rede.HeaderText = "SITUACAO";
-            this.situacao_rede.Name = "situacao_rede";
-            this.situacao_rede.Visible = false;
-            // 
-            // id_RoteadorRede
-            // 
-            this.id_RoteadorRede.DataPropertyName = "id";
-            this.id_RoteadorRede.HeaderText = "ID";
-            this.id_RoteadorRede.Name = "id_RoteadorRede";
-            this.id_RoteadorRede.Visible = false;
-            this.id_RoteadorRede.Width = 60;
-            // 
-            // roteadorID
-            // 
-            this.roteadorID.DataPropertyName = "roteadorID";
-            this.roteadorID.HeaderText = "roteadorID";
-            this.roteadorID.Name = "roteadorID";
-            this.roteadorID.Width = 95;
-            // 
-            // redeID
-            // 
-            this.redeID.DataPropertyName = "redeID";
-            this.redeID.HeaderText = "redeID";
-            this.redeID.Name = "redeID";
-            // 
-            // dataInicio
-            // 
-            this.dataInicio.DataPropertyName = "dataInicio";
-            this.dataInicio.HeaderText = "dataInicio";
-            this.dataInicio.Name = "dataInicio";
-            this.dataInicio.Visible = false;
-            // 
-            // dataFim
-            // 
-            this.dataFim.DataPropertyName = "dataFim";
-            this.dataFim.HeaderText = "dataFim";
-            this.dataFim.Name = "dataFim";
-            // 
-            // rdbIP
-            // 
-            this.rdbIP.AutoSize = true;
-            this.rdbIP.Location = new System.Drawing.Point(18, 143);
-            this.rdbIP.Name = "rdbIP";
-            this.rdbIP.Size = new System.Drawing.Size(44, 28);
-            this.rdbIP.TabIndex = 6;
-            this.rdbIP.TabStop = true;
-            this.rdbIP.Text = "IP";
-            this.rdbIP.UseVisualStyleBackColor = true;
-            this.rdbIP.CheckedChanged += new System.EventHandler(this.rdbIP_CheckedChanged);
-            // 
             // frmRoteadorRede
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,6 +584,7 @@
             this.Controls.Add(this.lblOp);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmRoteadorRede";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRoteadorRede";
             this.Load += new System.EventHandler(this.frmRoteadorRede_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgRoteadorRede)).EndInit();

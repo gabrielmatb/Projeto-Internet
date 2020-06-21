@@ -117,7 +117,220 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="relatóriosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Relatórios</value>
+  </data>
+  <data name="&gt;&gt;roteadorRedeToolStripMenuItem1.Name" xml:space="preserve">
+    <value>roteadorRedeToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;movimentosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="clientesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clientes</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;relatóriosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="sairToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 36</value>
+  </data>
+  <data name="clienteRoteadorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cliente/Roteador</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmMenu</value>
+  </data>
+  <data name="&gt;&gt;hTMLToolStripMenuItem.Name" xml:space="preserve">
+    <value>hTMLToolStripMenuItem</value>
+  </data>
+  <data name="roteadorRedeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 36</value>
+  </data>
+  <data name="clientesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 36</value>
+  </data>
+  <data name="&gt;&gt;clienteRoteadorToolStripMenuItem1.Name" xml:space="preserve">
+    <value>clienteRoteadorToolStripMenuItem1</value>
+  </data>
+  <data name="menuStrip1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 18pt</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;roteadorToolStripMenuItem.Name" xml:space="preserve">
+    <value>roteadorToolStripMenuItem</value>
+  </data>
+  <data name="roteadorRedeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Roteador/Rede</value>
+  </data>
+  <data name="hTMLToolStripMenuItem.Text" xml:space="preserve">
+    <value>HTML</value>
+  </data>
+  <data name="&gt;&gt;roteadorToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="redeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rede</value>
+  </data>
+  <data name="&gt;&gt;hTMLToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="&gt;&gt;sairToolStripMenuItem.Name" xml:space="preserve">
+    <value>sairToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;relatóriosToolStripMenuItem.Name" xml:space="preserve">
+    <value>relatóriosToolStripMenuItem</value>
+  </data>
+  <data name="roteadorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Roteador</value>
+  </data>
+  <data name="roteadorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 36</value>
+  </data>
+  <data name="&gt;&gt;roteadorRedeToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hTMLToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 36</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;redeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;cadastrosToolStripMenuItem.Name" xml:space="preserve">
+    <value>cadastrosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;sairToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;roteadorRedeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cadastrosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="relatóriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 36</value>
+  </data>
+  <data name="&gt;&gt;clientesToolStripMenuItem.Name" xml:space="preserve">
+    <value>clientesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;movimentosToolStripMenuItem.Name" xml:space="preserve">
+    <value>movimentosToolStripMenuItem</value>
+  </data>
+  <data name="movimentosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 36</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="redeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 36</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="roteadorRedeToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Roteador/Rede</value>
+  </data>
+  <data name="&gt;&gt;clienteRoteadorToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sobreToolStripMenuItem.Name" xml:space="preserve">
+    <value>sobreToolStripMenuItem</value>
+  </data>
+  <data name="movimentosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Movimentos</value>
+  </data>
+  <data name="sobreToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 36</value>
+  </data>
+  <data name="clienteRoteadorToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Cliente/Roteador</value>
+  </data>
+  <data name="&gt;&gt;clienteRoteadorToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>frmMenu</value>
+  </data>
+  <data name="&gt;&gt;clienteRoteadorToolStripMenuItem.Name" xml:space="preserve">
+    <value>clienteRoteadorToolStripMenuItem</value>
+  </data>
+  <data name="sairToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="cadastrosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 36</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;redeToolStripMenuItem.Name" xml:space="preserve">
+    <value>redeToolStripMenuItem</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 40</value>
+  </data>
+  <data name="&gt;&gt;sobreToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="clienteRoteadorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 36</value>
+  </data>
+  <data name="roteadorRedeToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 36</value>
+  </data>
+  <data name="&gt;&gt;clientesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 661</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="clienteRoteadorToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 36</value>
+  </data>
+  <data name="&gt;&gt;roteadorRedeToolStripMenuItem.Name" xml:space="preserve">
+    <value>roteadorRedeToolStripMenuItem</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="sobreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="cadastrosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cadastros</value>
+  </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>pt-BR</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
 </root>
