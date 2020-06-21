@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dtgRoteadorRede = new System.Windows.Forms.DataGridView();
-            this.id_RoteadorRede = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roteadorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.redeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataFim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbFiltrar = new System.Windows.Forms.GroupBox();
             this.rdbIP = new System.Windows.Forms.RadioButton();
             this.cmbSelecao = new System.Windows.Forms.ComboBox();
@@ -77,6 +72,13 @@
             this.lblRede = new System.Windows.Forms.Label();
             this.lblOp = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.id_RoteadorRede = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roteador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rede = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roteadorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.redeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataFim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgRoteadorRede)).BeginInit();
             this.gpbFiltrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgRoteador)).BeginInit();
@@ -89,6 +91,8 @@
             this.dtgRoteadorRede.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgRoteadorRede.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_RoteadorRede,
+            this.roteador,
+            this.rede,
             this.roteadorID,
             this.redeID,
             this.dataInicio,
@@ -98,40 +102,6 @@
             this.dtgRoteadorRede.Size = new System.Drawing.Size(341, 169);
             this.dtgRoteadorRede.TabIndex = 48;
             this.dtgRoteadorRede.DoubleClick += new System.EventHandler(this.dtgRoteadorRede_DoubleClick);
-            // 
-            // id_RoteadorRede
-            // 
-            this.id_RoteadorRede.DataPropertyName = "id";
-            this.id_RoteadorRede.HeaderText = "ID";
-            this.id_RoteadorRede.Name = "id_RoteadorRede";
-            this.id_RoteadorRede.Visible = false;
-            this.id_RoteadorRede.Width = 60;
-            // 
-            // roteadorID
-            // 
-            this.roteadorID.DataPropertyName = "roteadorID";
-            this.roteadorID.HeaderText = "roteadorID";
-            this.roteadorID.Name = "roteadorID";
-            this.roteadorID.Width = 95;
-            // 
-            // redeID
-            // 
-            this.redeID.DataPropertyName = "redeID";
-            this.redeID.HeaderText = "redeID";
-            this.redeID.Name = "redeID";
-            // 
-            // dataInicio
-            // 
-            this.dataInicio.DataPropertyName = "dataInicio";
-            this.dataInicio.HeaderText = "dataInicio";
-            this.dataInicio.Name = "dataInicio";
-            this.dataInicio.Visible = false;
-            // 
-            // dataFim
-            // 
-            this.dataFim.DataPropertyName = "dataFim";
-            this.dataFim.HeaderText = "dataFim";
-            this.dataFim.Name = "dataFim";
             // 
             // gpbFiltrar
             // 
@@ -554,6 +524,55 @@
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
             // 
+            // id_RoteadorRede
+            // 
+            this.id_RoteadorRede.DataPropertyName = "id";
+            this.id_RoteadorRede.HeaderText = "ID";
+            this.id_RoteadorRede.Name = "id_RoteadorRede";
+            this.id_RoteadorRede.Visible = false;
+            this.id_RoteadorRede.Width = 60;
+            // 
+            // roteador
+            // 
+            this.roteador.DataPropertyName = "roteador";
+            this.roteador.HeaderText = "roteador";
+            this.roteador.Name = "roteador";
+            this.roteador.Width = 95;
+            // 
+            // rede
+            // 
+            this.rede.DataPropertyName = "rede";
+            this.rede.HeaderText = "rede";
+            this.rede.Name = "rede";
+            // 
+            // roteadorID
+            // 
+            this.roteadorID.DataPropertyName = "roteadorID";
+            this.roteadorID.HeaderText = "roteadorID";
+            this.roteadorID.Name = "roteadorID";
+            this.roteadorID.Visible = false;
+            this.roteadorID.Width = 95;
+            // 
+            // redeID
+            // 
+            this.redeID.DataPropertyName = "redeID";
+            this.redeID.HeaderText = "redeID";
+            this.redeID.Name = "redeID";
+            this.redeID.Visible = false;
+            // 
+            // dataInicio
+            // 
+            this.dataInicio.DataPropertyName = "dataInicio";
+            this.dataInicio.HeaderText = "dataInicio";
+            this.dataInicio.Name = "dataInicio";
+            this.dataInicio.Visible = false;
+            // 
+            // dataFim
+            // 
+            this.dataFim.DataPropertyName = "dataFim";
+            this.dataFim.HeaderText = "dataFim";
+            this.dataFim.Name = "dataFim";
+            // 
             // frmRoteadorRede
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -643,11 +662,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mascara;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn situacao_rede;
+        private System.Windows.Forms.RadioButton rdbIP;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_RoteadorRede;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roteador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rede;
         private System.Windows.Forms.DataGridViewTextBoxColumn roteadorID;
         private System.Windows.Forms.DataGridViewTextBoxColumn redeID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataFim;
-        private System.Windows.Forms.RadioButton rdbIP;
     }
 }

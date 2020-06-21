@@ -10,7 +10,9 @@ namespace Internet.CAMADAS.MODEL
     {
         public int id { get; set; }
         public int roteadorID { get; set; }
+        public string roteador { get; set; }
         public int redeID { get; set; }
+        public string rede { get; set; }
         public DateTime dataInicio { get; set; }
         public DateTime dataFim { get; set; }
 

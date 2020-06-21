@@ -55,8 +55,8 @@ namespace Internet.RELATORIOS
                     sw.WriteLine("<tr align='center'>");
 
                     sw.WriteLine("<th>" + clienteRoteador.id + "</th>");
-                    sw.WriteLine("<td>" + clienteRoteador.clienteID + "</td>");
-                    sw.WriteLine("<td>" + clienteRoteador.roteadorID + "</td>");
+                    sw.WriteLine("<td>" + clienteRoteador.cliente + "</td>");
+                    sw.WriteLine("<td>" + clienteRoteador.roteador + "</td>");
                     sw.WriteLine("<td>" + clienteRoteador.dataInicio + "</td>");
                     sw.WriteLine("<td>" + clienteRoteador.dataFim + "</td>");
 

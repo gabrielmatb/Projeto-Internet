@@ -72,6 +72,8 @@
             this.dtgClienteRoteador = new System.Windows.Forms.DataGridView();
             this.id_ClienteRoteador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roteador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roteadorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataFim = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -490,6 +492,8 @@
             this.dtgClienteRoteador.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_ClienteRoteador,
             this.clienteID,
+            this.cliente,
+            this.roteador,
             this.roteadorID,
             this.dataInicio,
             this.dataFim});
@@ -512,12 +516,27 @@
             this.clienteID.DataPropertyName = "clienteID";
             this.clienteID.HeaderText = "clienteID";
             this.clienteID.Name = "clienteID";
+            this.clienteID.Visible = false;
+            // 
+            // cliente
+            // 
+            this.cliente.DataPropertyName = "cliente";
+            this.cliente.HeaderText = "cliente";
+            this.cliente.Name = "cliente";
+            // 
+            // roteador
+            // 
+            this.roteador.DataPropertyName = "roteador";
+            this.roteador.HeaderText = "roteador";
+            this.roteador.Name = "roteador";
+            this.roteador.Width = 95;
             // 
             // roteadorID
             // 
             this.roteadorID.DataPropertyName = "roteadorID";
             this.roteadorID.HeaderText = "roteadorID";
             this.roteadorID.Name = "roteadorID";
+            this.roteadorID.Visible = false;
             this.roteadorID.Width = 95;
             // 
             // dataInicio
@@ -623,6 +642,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idade;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_ClienteRoteador;
         private System.Windows.Forms.DataGridViewTextBoxColumn clienteID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roteador;
         private System.Windows.Forms.DataGridViewTextBoxColumn roteadorID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataFim;

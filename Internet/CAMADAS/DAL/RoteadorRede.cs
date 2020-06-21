@@ -32,6 +32,16 @@ namespace Internet.CAMADAS.DAL
                     roteadorRede.dataInicio = Convert.ToDateTime(dados["dataInicio"].ToString());
                     roteadorRede.dataFim = Convert.ToDateTime(dados["dataFim"].ToString());
 
+                    //recuperar roteador
+                    CAMADAS.BLL.Roteador bllRoteador = new BLL.Roteador();
+                    CAMADAS.MODEL.Roteador roteador = bllRoteador.SelectByID(roteadorRede.roteadorID)[0];
+                    roteadorRede.roteador = roteador.nome;
+
+                    //recuperar rede
+                    CAMADAS.BLL.Rede bllRede = new BLL.Rede();
+                    CAMADAS.MODEL.Rede rede = bllRede.SelectByID(roteadorRede.redeID)[0];
+                    roteadorRede.rede = rede.ip;
+
                     listaRoteadorRede.Add(roteadorRede);
                 }
             }

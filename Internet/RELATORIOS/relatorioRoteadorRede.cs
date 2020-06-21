@@ -17,13 +17,15 @@ namespace Internet.RELATORIOS
 
             string pasta = Funcoes.deretorioPasta();
             string arquivo = pasta + @"\RelatorioRoteadorRede.html";
+            string arquivopdf = pasta + @"\RelatorioRoteadorRede.pdf";
             StreamWriter sw = new StreamWriter(arquivo);
             using (sw)
             {
                 sw.WriteLine("<html lang='pt-br'>");
                 sw.WriteLine("<head>");
 
-                sw.WriteLine("<meta charset='UTF - 8'>");
+                sw.WriteLine("<meta http-equiv = 'Content-Type' " +
+                            "content='text/html; charset=utf-8'/>");
                 sw.WriteLine("<meta name='viewport' content='width = device - width, initial - scale = 1.0'>");
                 sw.WriteLine("<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk' crossorigin='anonymous'>");
                 sw.WriteLine("<title>Relatorio Roteador - Rede</title>");
@@ -53,8 +55,8 @@ namespace Internet.RELATORIOS
                     sw.WriteLine("<tr align='center'>");
 
                     sw.WriteLine("<th>" + roteadorRede.id + "</th>");
-                    sw.WriteLine("<td>" + roteadorRede.roteadorID + "</td>");
-                    sw.WriteLine("<td>" + roteadorRede.redeID + "</td>");
+                    sw.WriteLine("<td>" + roteadorRede.roteador + "</td>");
+                    sw.WriteLine("<td>" + roteadorRede.rede + "</td>");
                     sw.WriteLine("<td>" + roteadorRede.dataInicio + "</td>");
                     sw.WriteLine("<td>" + roteadorRede.dataFim + "</td>");
 
@@ -74,6 +76,10 @@ namespace Internet.RELATORIOS
                 sw.WriteLine("</tr>");
             }
             System.Diagnostics.Process.Start(arquivo);
+
+            var htmlToPdf = new NReco.PdfGenerator.HtmlToPdfConverter();
+            htmlToPdf.CustomWkHtmlArgs = "--dpi 300";
+            htmlToPdf.GeneratePdfFromFile(arquivo, null, arquivopdf);
         }
     }
 }
