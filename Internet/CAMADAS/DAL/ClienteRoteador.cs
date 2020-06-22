@@ -34,7 +34,7 @@ namespace Internet.CAMADAS.DAL
 
                     //recuperar cliente
                     CAMADAS.BLL.Clientes bllClientes = new BLL.Clientes();
-                    CAMADAS.MODEL.Clientes cliente = bllClientes.SelectByID(clienteRoteador.clienteID);
+                    CAMADAS.MODEL.Clientes cliente = bllClientes.SelectByID(clienteRoteador.clienteID)[0];
                     clienteRoteador.cliente = cliente.nome;
 
                     //recuperar roteador
