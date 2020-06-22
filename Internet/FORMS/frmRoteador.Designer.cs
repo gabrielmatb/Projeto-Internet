@@ -59,6 +59,8 @@
             // 
             // dtgRoteador
             // 
+            this.dtgRoteador.AllowUserToAddRows = false;
+            this.dtgRoteador.AllowUserToDeleteRows = false;
             this.dtgRoteador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgRoteador.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -70,6 +72,7 @@
             this.mac});
             this.dtgRoteador.Location = new System.Drawing.Point(468, 87);
             this.dtgRoteador.Name = "dtgRoteador";
+            this.dtgRoteador.ReadOnly = true;
             this.dtgRoteador.Size = new System.Drawing.Size(526, 354);
             this.dtgRoteador.TabIndex = 31;
             this.dtgRoteador.DoubleClick += new System.EventHandler(this.dtgRoteador_DoubleClick);
@@ -79,6 +82,7 @@
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "ID";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Width = 60;
             // 
             // senha
@@ -86,6 +90,7 @@
             this.senha.DataPropertyName = "senha";
             this.senha.HeaderText = "SENHA";
             this.senha.Name = "senha";
+            this.senha.ReadOnly = true;
             this.senha.Visible = false;
             // 
             // situacao
@@ -93,6 +98,7 @@
             this.situacao.DataPropertyName = "situacao";
             this.situacao.HeaderText = "SITUACAO";
             this.situacao.Name = "situacao";
+            this.situacao.ReadOnly = true;
             this.situacao.Visible = false;
             // 
             // nome
@@ -100,6 +106,7 @@
             this.nome.DataPropertyName = "nome";
             this.nome.HeaderText = "NOME";
             this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
             this.nome.Width = 120;
             // 
             // marca
@@ -107,18 +114,21 @@
             this.marca.DataPropertyName = "marca";
             this.marca.HeaderText = "MARCA";
             this.marca.Name = "marca";
+            this.marca.ReadOnly = true;
             // 
             // usuario
             // 
             this.usuario.DataPropertyName = "usuario";
             this.usuario.HeaderText = "USUARIO";
             this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
             // 
             // mac
             // 
             this.mac.DataPropertyName = "mac";
             this.mac.HeaderText = "MAC";
             this.mac.Name = "mac";
+            this.mac.ReadOnly = true;
             // 
             // txtSenha
             // 

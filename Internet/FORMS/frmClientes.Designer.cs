@@ -205,6 +205,8 @@
             // 
             // dtgClientes
             // 
+            this.dtgClientes.AllowUserToAddRows = false;
+            this.dtgClientes.AllowUserToDeleteRows = false;
             this.dtgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -214,6 +216,7 @@
             this.idade});
             this.dtgClientes.Location = new System.Drawing.Point(471, 90);
             this.dtgClientes.Name = "dtgClientes";
+            this.dtgClientes.ReadOnly = true;
             this.dtgClientes.Size = new System.Drawing.Size(526, 354);
             this.dtgClientes.TabIndex = 15;
             this.dtgClientes.DoubleClick += new System.EventHandler(this.dtgClientes_DoubleClick);
@@ -223,6 +226,7 @@
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "ID";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Width = 60;
             // 
             // nome
@@ -230,6 +234,7 @@
             this.nome.DataPropertyName = "nome";
             this.nome.HeaderText = "NOME";
             this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
             this.nome.Width = 170;
             // 
             // cpf
@@ -237,18 +242,21 @@
             this.cpf.DataPropertyName = "cpf";
             this.cpf.HeaderText = "CPF";
             this.cpf.Name = "cpf";
+            this.cpf.ReadOnly = true;
             // 
             // telefone
             // 
             this.telefone.DataPropertyName = "telefone";
             this.telefone.HeaderText = "TELEFONE";
             this.telefone.Name = "telefone";
+            this.telefone.ReadOnly = true;
             // 
             // idade
             // 
             this.idade.DataPropertyName = "idade";
             this.idade.HeaderText = "IDADE";
             this.idade.Name = "idade";
+            this.idade.ReadOnly = true;
             this.idade.Width = 50;
             // 
             // btnCancelar

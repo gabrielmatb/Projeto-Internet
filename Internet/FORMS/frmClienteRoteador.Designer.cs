@@ -213,6 +213,8 @@
             // 
             // dtgCliente
             // 
+            this.dtgCliente.AllowUserToAddRows = false;
+            this.dtgCliente.AllowUserToDeleteRows = false;
             this.dtgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -222,6 +224,7 @@
             this.idade});
             this.dtgCliente.Location = new System.Drawing.Point(8, 349);
             this.dtgCliente.Name = "dtgCliente";
+            this.dtgCliente.ReadOnly = true;
             this.dtgCliente.Size = new System.Drawing.Size(247, 175);
             this.dtgCliente.TabIndex = 14;
             this.dtgCliente.DoubleClick += new System.EventHandler(this.dtgCliente_DoubleClick);
@@ -231,6 +234,7 @@
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "ID";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Width = 60;
             // 
             // nome_Cliente
@@ -238,6 +242,7 @@
             this.nome_Cliente.DataPropertyName = "nome";
             this.nome_Cliente.HeaderText = "NOME";
             this.nome_Cliente.Name = "nome_Cliente";
+            this.nome_Cliente.ReadOnly = true;
             this.nome_Cliente.Width = 140;
             // 
             // cpf
@@ -245,6 +250,7 @@
             this.cpf.DataPropertyName = "cpf";
             this.cpf.HeaderText = "CPF";
             this.cpf.Name = "cpf";
+            this.cpf.ReadOnly = true;
             this.cpf.Visible = false;
             // 
             // telefone
@@ -252,6 +258,7 @@
             this.telefone.DataPropertyName = "telefone";
             this.telefone.HeaderText = "TELEFONE";
             this.telefone.Name = "telefone";
+            this.telefone.ReadOnly = true;
             this.telefone.Visible = false;
             // 
             // idade
@@ -259,10 +266,13 @@
             this.idade.DataPropertyName = "idade";
             this.idade.HeaderText = "IDADE";
             this.idade.Name = "idade";
+            this.idade.ReadOnly = true;
             this.idade.Visible = false;
             // 
             // dtgRoteador
             // 
+            this.dtgRoteador.AllowUserToAddRows = false;
+            this.dtgRoteador.AllowUserToDeleteRows = false;
             this.dtgRoteador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgRoteador.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_roteador,
@@ -274,6 +284,7 @@
             this.situacao});
             this.dtgRoteador.Location = new System.Drawing.Point(499, 107);
             this.dtgRoteador.Name = "dtgRoteador";
+            this.dtgRoteador.ReadOnly = true;
             this.dtgRoteador.Size = new System.Drawing.Size(297, 231);
             this.dtgRoteador.TabIndex = 15;
             this.dtgRoteador.DoubleClick += new System.EventHandler(this.dtgRoteador_DoubleClick);
@@ -283,6 +294,7 @@
             this.id_roteador.DataPropertyName = "id";
             this.id_roteador.HeaderText = "ID";
             this.id_roteador.Name = "id_roteador";
+            this.id_roteador.ReadOnly = true;
             this.id_roteador.Width = 50;
             // 
             // nome
@@ -290,18 +302,21 @@
             this.nome.DataPropertyName = "nome";
             this.nome.HeaderText = "ROTEADOR";
             this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
             // 
             // marca
             // 
             this.marca.DataPropertyName = "marca";
             this.marca.HeaderText = "MARCA";
             this.marca.Name = "marca";
+            this.marca.ReadOnly = true;
             // 
             // usuario
             // 
             this.usuario.DataPropertyName = "usuario";
             this.usuario.HeaderText = "USUARIO";
             this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
             this.usuario.Visible = false;
             // 
             // senha
@@ -309,6 +324,7 @@
             this.senha.DataPropertyName = "senha";
             this.senha.HeaderText = "SENHA";
             this.senha.Name = "senha";
+            this.senha.ReadOnly = true;
             this.senha.Visible = false;
             // 
             // mac
@@ -316,6 +332,7 @@
             this.mac.DataPropertyName = "mac";
             this.mac.HeaderText = "MAC";
             this.mac.Name = "mac";
+            this.mac.ReadOnly = true;
             this.mac.Visible = false;
             // 
             // situacao
@@ -323,6 +340,7 @@
             this.situacao.DataPropertyName = "situacao";
             this.situacao.HeaderText = "SITUACAO";
             this.situacao.Name = "situacao";
+            this.situacao.ReadOnly = true;
             this.situacao.Visible = false;
             // 
             // dtpData
@@ -488,6 +506,8 @@
             // 
             // dtgClienteRoteador
             // 
+            this.dtgClienteRoteador.AllowUserToAddRows = false;
+            this.dtgClienteRoteador.AllowUserToDeleteRows = false;
             this.dtgClienteRoteador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgClienteRoteador.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_ClienteRoteador,
@@ -499,6 +519,7 @@
             this.dataFim});
             this.dtgClienteRoteador.Location = new System.Drawing.Point(261, 348);
             this.dtgClienteRoteador.Name = "dtgClienteRoteador";
+            this.dtgClienteRoteador.ReadOnly = true;
             this.dtgClienteRoteador.Size = new System.Drawing.Size(341, 176);
             this.dtgClienteRoteador.TabIndex = 24;
             this.dtgClienteRoteador.DoubleClick += new System.EventHandler(this.dtgClienteRoteador_DoubleClick);
@@ -508,6 +529,7 @@
             this.id_ClienteRoteador.DataPropertyName = "id";
             this.id_ClienteRoteador.HeaderText = "ID";
             this.id_ClienteRoteador.Name = "id_ClienteRoteador";
+            this.id_ClienteRoteador.ReadOnly = true;
             this.id_ClienteRoteador.Visible = false;
             this.id_ClienteRoteador.Width = 60;
             // 
@@ -516,6 +538,7 @@
             this.clienteID.DataPropertyName = "clienteID";
             this.clienteID.HeaderText = "clienteID";
             this.clienteID.Name = "clienteID";
+            this.clienteID.ReadOnly = true;
             this.clienteID.Visible = false;
             // 
             // cliente
@@ -523,12 +546,14 @@
             this.cliente.DataPropertyName = "cliente";
             this.cliente.HeaderText = "cliente";
             this.cliente.Name = "cliente";
+            this.cliente.ReadOnly = true;
             // 
             // roteador
             // 
             this.roteador.DataPropertyName = "roteador";
             this.roteador.HeaderText = "roteador";
             this.roteador.Name = "roteador";
+            this.roteador.ReadOnly = true;
             this.roteador.Width = 95;
             // 
             // roteadorID
@@ -536,6 +561,7 @@
             this.roteadorID.DataPropertyName = "roteadorID";
             this.roteadorID.HeaderText = "roteadorID";
             this.roteadorID.Name = "roteadorID";
+            this.roteadorID.ReadOnly = true;
             this.roteadorID.Visible = false;
             this.roteadorID.Width = 95;
             // 
@@ -544,6 +570,7 @@
             this.dataInicio.DataPropertyName = "dataInicio";
             this.dataInicio.HeaderText = "dataInicio";
             this.dataInicio.Name = "dataInicio";
+            this.dataInicio.ReadOnly = true;
             this.dataInicio.Visible = false;
             // 
             // dataFim
@@ -551,6 +578,7 @@
             this.dataFim.DataPropertyName = "dataFim";
             this.dataFim.HeaderText = "dataFim";
             this.dataFim.Name = "dataFim";
+            this.dataFim.ReadOnly = true;
             // 
             // frmClienteRoteador
             // 

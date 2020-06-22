@@ -56,6 +56,8 @@
             // 
             // dtgRede
             // 
+            this.dtgRede.AllowUserToAddRows = false;
+            this.dtgRede.AllowUserToDeleteRows = false;
             this.dtgRede.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgRede.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -66,6 +68,7 @@
             this.situacao});
             this.dtgRede.Location = new System.Drawing.Point(471, 87);
             this.dtgRede.Name = "dtgRede";
+            this.dtgRede.ReadOnly = true;
             this.dtgRede.Size = new System.Drawing.Size(526, 354);
             this.dtgRede.TabIndex = 49;
             this.dtgRede.DoubleClick += new System.EventHandler(this.dtgRede_DoubleClick);
@@ -75,6 +78,7 @@
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "ID";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Width = 60;
             // 
             // ip
@@ -82,12 +86,14 @@
             this.ip.DataPropertyName = "ip";
             this.ip.HeaderText = "IP";
             this.ip.Name = "ip";
+            this.ip.ReadOnly = true;
             // 
             // gateway
             // 
             this.gateway.DataPropertyName = "gateway";
             this.gateway.HeaderText = "GATEWAY";
             this.gateway.Name = "gateway";
+            this.gateway.ReadOnly = true;
             this.gateway.Width = 110;
             // 
             // mascara
@@ -95,6 +101,7 @@
             this.mascara.DataPropertyName = "mascara";
             this.mascara.HeaderText = "MASCARA";
             this.mascara.Name = "mascara";
+            this.mascara.ReadOnly = true;
             this.mascara.Width = 120;
             // 
             // valor
@@ -102,6 +109,7 @@
             this.valor.DataPropertyName = "valor";
             this.valor.HeaderText = "VALOR";
             this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
             this.valor.Width = 90;
             // 
             // situacao
@@ -109,6 +117,7 @@
             this.situacao.DataPropertyName = "situacao";
             this.situacao.HeaderText = "SITUACAO";
             this.situacao.Name = "situacao";
+            this.situacao.ReadOnly = true;
             this.situacao.Visible = false;
             // 
             // txtValor
